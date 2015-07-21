@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <% Category.all.each do |kategorija| %>
+    <%= link_to kategorija.name, jobs_path(category: kategorija.name) %>
+    <% end %>
+  <%= yield %>
+</div>
 
 </body>
 </html>
