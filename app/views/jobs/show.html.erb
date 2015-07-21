@@ -1,0 +1,7 @@
+<h1><%= @job.title %></h1>
+<p><%= @job.description %></p>
+<p><%= @job.company %></p>
+
+<%= link_to "Vrati se", root_path %>
+<%= link_to "Izmeni", edit_job_path(@job) %>
+<%= link_to "Obrisi", job_path(@job), method: :delete, data: { confirm: "Oces da obrises?" } %>

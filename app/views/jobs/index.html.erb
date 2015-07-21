@@ -1,0 +1,8 @@
+<h1>Ovo je jebena index strana</h1>
+
+<% @jobs.each do |poso| %>
+  <h2><%= link_to poso.title, poso %></h2>
+  <p><%= poso.company %></p>
+<% end %>
+
+<%= link_to "Novi Posao", new_job_path %>
