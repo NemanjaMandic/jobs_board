@@ -1,7 +1,14 @@
-<h1><%= @job.title %></h1>
-<p><%= @job.description %></p>
-<p><%= @job.company %></p>
-
-<%= link_to "Vrati se", root_path %>
-<%= link_to "Izmeni", edit_job_path(@job) %>
-<%= link_to "Obrisi", job_path(@job), method: :delete, data: { confirm: "Oces da obrises?" } %>
+<div id="jobs">
+    <div class="job">
+        <h2><%= @job.title %></h2>
+        <p><%= @job.description %></p>
+        <p><%= @job.company %></p>
+    </div>
+    <%= link_to "Apliciraj za posao", @job.url, class: "btn btn-default" %>
+    
+    <div id="links">
+        <%= link_to "Vrati se", root_path, class: "btn btn-sm btn-default" %>
+        <%= link_to "Izmeni", edit_job_path(@job), class: "btn btn-sm btn-default" %>
+        <%= link_to "Obrisi", job_path(@job), method: :delete, data: { confirm: "Oces da obrises?" }, class: "btn btn-sm btn-default" %>
+    </div>
+</div>

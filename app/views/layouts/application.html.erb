@@ -8,10 +8,22 @@
 </head>
 <body>
 
-<div class="container">
-  <% Category.all.each do |kategorija| %>
-    <%= link_to kategorija.name, jobs_path(category: kategorija.name) %>
+<nav class="navbar navbar-default">
+  <!--<div class="container"> -->
+    <div class="navbar-brand">Rails Jobs Board</div>
+    <ul class="nav navbar-nav">
+      <li><%= link_to "Svi Poslovi", root_path %></li>
+      <li><%= link_to "Novi Posao", new_job_path %></li>
+        <% Category.all.each do |kategorija| %>
+         <li><%= link_to kategorija.name, jobs_path(category: kategorija.name) %></li>
+        
     <% end %>
+      
+    </ul>
+  <!--</div>-->
+</nav>
+<div class="container">
+
   <%= yield %>
 </div>
 
